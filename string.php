@@ -27,9 +27,24 @@
     $array=explode(",",$str);
     echo "<pre>";
     print_r($array);
-    echo "</pre>"
+    echo "</pre>";
+    ?>
+    <article>
+        <h3>字串組合</h3>
+        <div>將上列陣列組合</div>
+    </article>
+    <?php
+    $str="I,have,a,pen";
+    $array=explode(",",$str);
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>";
 
+    $newstr=implode("&nbsp",$array);
+    echo $newstr;
 
     ?>
+
+
 </body>
 </html>
