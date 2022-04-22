@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>字串取代</h1>
+    <h1>字串練習</h1>
     <article>
        <h3>字串取代</h3>
        <div>將"aaddw1123"改成*********</div> 
@@ -17,6 +17,17 @@
     $strlen=mb_strlen($password);
     $password=str_repeat("*",$strlen);
     echo $password;
+    ?>
+    <article>
+        <h3>字串分割</h3>
+        <div>將"I have a pen"依","切割後成為陣列</div>
+    </article>
+    <?php
+    $str="I,have,a,pen";
+    $array=explode(",",$str);
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>"
 
 
     ?>
