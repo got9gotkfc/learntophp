@@ -14,6 +14,9 @@
             text-align: center;
             border: 1px solid #aaa;
         }
+        .holiday{
+            background:pink;
+        }
     </style>
 </head>
 <body>
@@ -41,20 +44,27 @@
 
         for ($i=0; $i <6 ; $i++) { 
             echo"<tr>";
-            for ($j=0; $j <7 ; $j++) { 
-                echo"<td>";
+            for ($j=0; $j <7 ; $j++) {
+                echo"<td>"; 
                 $day=$i*7+($j+1)-$firstweek;
                 if ($day<1) {
                     // 接上個月
                     // echo date("t",strtotime($lastmonth))+$day;
+                    
                     echo "&nbsp";
                 }else if($day>$monthday){
                     // 接下個月
                     // echo $day%$monthday;
+                   
                     echo "&nbsp";
+                }else if (($i*7+($j+1))%7==0||($i*7+($j+1))%7==1){
+                     echo "<span style='color:red'>"
+                    . $day
+                    . "</span>" ;
                 }else{
                     echo $day;
                 }
+                
                 echo"</td>";
             }
             echo"</tr>";
