@@ -15,6 +15,8 @@ if ($acc != $default_user || $pw != $default_pw) {
     $error="帳號密碼錯誤";
     header("location:login.php?error=$error");
 }else{
+    session_start();
+    $_SESSION['user']=$acc;
     header("location:memcenter.php?acc=$acc");
 }
 

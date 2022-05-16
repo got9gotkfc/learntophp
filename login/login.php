@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    header("location:memcenter.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +20,13 @@
 <body>
     <div class="all">
         <div class="header">會員登入</div>
-        <?php
-        if (!empty($_Get['error'])) {
-            echo "<h3>/h3>";
-        }
-        ?>
+        <div>
+            <?php
+            if (!empty($_GET['error'])) {
+                echo "<h3 style='color:red'>{$_GET['error']}</h3>";
+            }
+            ?>
+        </div>
         <form action="chklogin.php" method="post">
             <table>
                 <tr>

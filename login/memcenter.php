@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>歡迎<?=$_GET["acc"];?></h1>
+    <?php session_start();?>
+    <h1>歡迎<?=$_SESSION["user"];?></h1>
+    <li><a href="logout.php">登出</a></li>
+    <li><a href='index.php'>回首頁</a></li>
 </body>
 </html>
